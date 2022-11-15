@@ -1,0 +1,10 @@
+FROM eclipse-temurin:18-jre-alpine
+WORKDIR /etc/app
+ARG JAR_FILE=./presenter/target/*.jar
+COPY ${JAR_FILE} /etc/app/wallet-core.jar
+WORKDIR /etc/app
+
+ENV TZ=Asia/Tehran
+RUN date
+
+ENTRYPOINT ["java","-Dspring.profiles.active=prod","-jar","wallet-core.jar"]

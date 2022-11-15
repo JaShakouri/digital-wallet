@@ -1,0 +1,40 @@
+# Global config
+server:
+  port: 8080
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+
+amazon:
+  aws:
+    access-key: "*********"
+    secret-key: "*********"
+    region: "*********"
+    endpoint: "*********"
+
+# Dev config path
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+    import:
+      - application/dev.yml
+
+# Prod config path
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+    import:
+      - application/prod.yml

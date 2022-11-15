@@ -1,0 +1,8 @@
+@font-face {
+    font-family: yekan-bakh;
+    src: url("../fonts/Yekan_Bakh_Medium.ttf") format("ttf")
+}
+
+.body {
+    font-family: 'yekan-bakh'
+}
